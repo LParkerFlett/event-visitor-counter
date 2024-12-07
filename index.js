@@ -8,14 +8,15 @@ let count = 0;
 
 function increment() {
     count += 1;
-    countEl.innerText = count; // we are saying we want the text on the inside of the tags to be the count
+    countEl.textContent = count; // we are saying we want the text on the inside of the tags to be the count
     console.log(count);
 }
 
 // Both '.getElementByID' and '.log' are functions in the same way 'increment()' is a function. They are hooked onto the document object and console objects but are still functions or methods (what we call functions that are hooked onto objects)
 
 function save() {
-    let previousEntries = count + "-"; 
-    saveEl.innerText += previousEntries;
-    console.log(previousEntries);
+    let previousEntries = count + " - "; 
+    saveEl.textContent += previousEntries; // .innerText only shows human-readable elements, and wasn't rendering the spaces, so changed this to .textContent
+    countEl.textContent = 0;
+    count = 0;
 } 
